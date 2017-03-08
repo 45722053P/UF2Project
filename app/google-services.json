@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "794347321281",
+    "firebase_url": "https://mi-fabuloso-proyecto-cf82b.firebaseio.com",
+    "project_id": "mi-fabuloso-proyecto-cf82b",
+    "storage_bucket": "mi-fabuloso-proyecto-cf82b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:794347321281:android:8fdf4f4c4905ba39",
+        "android_client_info": {
+          "package_name": "com.proyecto.proyectouf2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "794347321281-rrumt0ug711rnpkuuee2ksdshfdooigu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.proyecto.proyectouf2",
+            "certificate_hash": "7c15f07666103836992d7e17dbf724927ceaf3c5"
+          }
+        },
+        {
+          "client_id": "794347321281-qvv4roj5bmnr9kl28r6eagg7o1d1stk5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQAXy3YyPXIVUStUnycWcsSuqgv888up0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "794347321281-qvv4roj5bmnr9kl28r6eagg7o1d1stk5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
