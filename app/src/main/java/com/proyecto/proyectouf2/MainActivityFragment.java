@@ -1,6 +1,13 @@
 package com.proyecto.proyectouf2;
 
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
@@ -19,6 +26,9 @@ import org.osmdroid.views.overlay.compass.InternalCompassOrientationProvider;
 import org.osmdroid.views.overlay.mylocation.GpsMyLocationProvider;
 import org.osmdroid.views.overlay.mylocation.MyLocationNewOverlay;
 
+import java.io.File;
+
+
 /**
  * A placeholder fragment containing a simple view.
  */
@@ -32,6 +42,9 @@ public class MainActivityFragment extends Fragment {
     private CompassOverlay mCompassOverlay;
     private IMapController mapController;
     private RadiusMarkerClusterer bicingMarker;
+    private BottomNavigationView botonPhoto,botonVideo,botonNote;
+    private final String ruta_fotos = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES) + "/fotos/";
+    private File file = new File(ruta_fotos);
 
     public MainActivityFragment(){
     }
@@ -39,10 +52,15 @@ public class MainActivityFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+
+
         View fragmentView = inflater.inflate(R.layout.fragment_main, container, false);
 
+        botonPhoto = (BottomNavigationView) fragmentView.findViewById(R.id.photo_id);
 
         map = (MapView) fragmentView.findViewById(R.id.map);
+
 
         abrirMapa();
         hacerZoom();
@@ -51,9 +69,23 @@ public class MainActivityFragment extends Fragment {
         map.invalidate();
 
 
+
+        botonPhoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent takeFoto = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+
+                startActivityForResult(takeFoto,0);
+            }
+        });
+
+
+
+
+
+
         return fragmentView;
     }
-
 
     private void abrirMapa(){
         map.setTileSource(TileSourceFactory.MAPNIK);
@@ -165,15 +197,17 @@ public class MainActivityFragment extends Fragment {
 //            }
 //        });
 //    }
-//    private void agruparMarkers() {
-//        bicingMarker = new RadiusMarkerClusterer(getContext());
-//        map.getOverlays().add(bicingMarker);
-//
-//        Drawable clusterIconD = getResources().getDrawable(R.drawable.mapmarkermultiple
-//        );
-//        Bitmap clusterIcon = ((BitmapDrawable)clusterIconD).getBitmap();
-//
-//        bicingMarker.setIcon(clusterIcon);
-//        bicingMarker.setRadius(100);
-//    }
+    private void agruparMarkers() {
+        bicingMarker = new RadiusMarkerClusterer(getContext());
+        map.getOverlays().add(bicingMarker);
+
+        Drawable clusterIconD = getResources().getDrawable(R.drawable.mapmarkermultiple
+        );
+        Bitmap clusterIcon = ((BitmapDrawable)clusterIconD).getBitmap();
+
+        bicingMarker.setIcon(clusterIcon);
+        bicingMarker.setRadius(100);
+    }
+
 }
+

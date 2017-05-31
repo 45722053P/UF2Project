@@ -5,6 +5,8 @@
     <string name="menu_settings">ajustes</string>
     <string name="menu_navigation">navigation</string>
     <string name="action_media">Galeria</string>
+    <string name="title_activity_video">videoActivity</string>
+    <string name="title_activity_photo">photoActivity</string>
 
 
 </resources>

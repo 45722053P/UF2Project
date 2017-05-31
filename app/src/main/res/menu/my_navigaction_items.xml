@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/action_search"
+    <item android:id="@+id/photo_id"
         android:icon="@drawable/ic_add_a_photo_black_24dp"
         android:title="" />
-    <item android:id="@+id/action_settings"
+    <item android:id="@+id/video_id"
         android:icon="@drawable/ic_video_call_black_24dp"
         android:title="" />
-    <item android:id="@+id/action_navigation"
+    <item android:id="@+id/note_id"
         android:icon="@drawable/ic_note_add_black_24dp"
         android:title="" />
 </menu>
